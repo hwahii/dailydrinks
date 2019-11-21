@@ -100,24 +100,29 @@ let AddOrder = ({ dispatch }) => {
 	let nameInput, priceInput, notesInput;
 	return (
 		<div>
-			<label id="name">Name</label>
+			<label id="name">Name: </label>
 			<input
 				ref={node => {
 					nameInput = node;
 				}}
 			/>
-			<label id="price">Price</label>
+			&nbsp;
+			<label id="price">Price: </label>
 			<input
 				ref={node => {
 					priceInput = node;
 				}}
 			/>
-			<label id="notes">Notes</label>
-			<input
+			<br />
+			<label id="notes" style={{ verticalAlign: 'top' }}>
+				Notes:{' '}
+			</label>
+			<textarea
 				ref={node => {
 					notesInput = node;
 				}}
 			/>
+			<br />
 			<button
 				onClick={() => {
 					dispatch(
@@ -149,19 +154,12 @@ class EditOrder extends React.Component {
 			notes: props.notes
 		};
 		this.dispatch = props.dispatch;
-		this.changeName = this.changeName.bind(this);
-		this.changePrice = this.changePrice.bind(this);
-		this.changeNotes = this.changeNotes.bind(this);
+		this.changeState = this.changeState.bind(this);
 	}
 
-	changeName(event) {
-		this.setState({ name: event.target.value });
-	}
-	changePrice(event) {
-		this.setState({ price: event.target.value });
-	}
-	changeNotes(event) {
-		this.setState({ notes: event.target.value });
+	changeState(event) {
+		let changeName = event.target.name;
+		this.setState({ [changeName]: event.target.value });
 	}
 	render() {
 		return (
@@ -172,7 +170,7 @@ class EditOrder extends React.Component {
 					id="name"
 					name="name"
 					value={this.state.name}
-					onChange={this.changeName}
+					onChange={this.changeState}
 				/>
 				<br />
 				<label>Price: </label>
@@ -181,18 +179,18 @@ class EditOrder extends React.Component {
 					id="price"
 					name="price"
 					value={this.state.price}
-					onChange={this.changePrice}
+					onChange={this.changeState}
 				/>
 				<br />
-				<label>Notes: </label>
-				<input
+				<label style={{ verticalAlign: 'top' }}>Notes: </label>
+				<textarea
 					type="text"
 					id="notes"
 					name="notes"
 					value={this.state.notes}
-					onChange={this.changeNotes}
+					onChange={this.changeState}
 				/>
-                <br />
+				<br />
 				<button
 					onClick={() => {
 						this.dispatch(
@@ -230,7 +228,7 @@ const Order = ({
 		);
 	}
 	return (
-		<li key={id}>
+		<li key={id} style={{ whiteSpace: 'pre-wrap' }}>
 			Name: {name}
 			<br />
 			Price: {price}
