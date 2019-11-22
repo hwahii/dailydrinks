@@ -36,7 +36,7 @@ class EditOrder extends React.Component {
 				<label id="price">Price</label>
 				<br />
 				<input
-					type="text"
+					type="number"
 					id="price"
 					name="price"
 					value={this.state.price}

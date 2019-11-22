@@ -12,6 +12,7 @@ let AddOrder = ({ dispatch }) => {
 				<label id="name">Name</label>
 				<br />
 				<input
+					type="text"
 					ref={node => {
 						nameInput = node;
 					}}
@@ -20,6 +21,7 @@ let AddOrder = ({ dispatch }) => {
 				<label id="price">Price</label>
 				<br />
 				<input
+					type="number"
 					ref={node => {
 						priceInput = node;
 					}}
