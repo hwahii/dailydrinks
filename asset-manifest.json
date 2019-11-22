@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/dailydrinks/static/css/main.11540f44.chunk.css",
+    "main.js": "/dailydrinks/static/js/main.b7c11767.chunk.js",
+    "main.js.map": "/dailydrinks/static/js/main.b7c11767.chunk.js.map",
+    "runtime-main.js": "/dailydrinks/static/js/runtime-main.ca5f9e86.js",
+    "runtime-main.js.map": "/dailydrinks/static/js/runtime-main.ca5f9e86.js.map",
+    "static/js/2.20a22520.chunk.js": "/dailydrinks/static/js/2.20a22520.chunk.js",
+    "static/js/2.20a22520.chunk.js.map": "/dailydrinks/static/js/2.20a22520.chunk.js.map",
+    "index.html": "/dailydrinks/index.html",
+    "precache-manifest.63f81da320c02394217161e0e95ac4f1.js": "/dailydrinks/precache-manifest.63f81da320c02394217161e0e95ac4f1.js",
+    "service-worker.js": "/dailydrinks/service-worker.js",
+    "static/css/main.11540f44.chunk.css.map": "/dailydrinks/static/css/main.11540f44.chunk.css.map",
+    "static/media/logo.png": "/dailydrinks/static/media/logo.c63c2575.png",
+    "static/media/menu.png": "/dailydrinks/static/media/menu.78e089b7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ca5f9e86.js",
+    "static/js/2.20a22520.chunk.js",
+    "static/css/main.11540f44.chunk.css",
+    "static/js/main.b7c11767.chunk.js"
+  ]
+}
