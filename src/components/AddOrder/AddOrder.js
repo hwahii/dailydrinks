@@ -1,51 +1,60 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addOrder } from '../../actions/orders';
+import menu from '../../images/menu.png';
 
 let AddOrder = ({ dispatch }) => {
 	let nameInput, priceInput, notesInput;
 	return (
-		<div>
-			<label id="name">Name: </label>
-			<input
-				ref={node => {
-					nameInput = node;
-				}}
-			/>
-			&nbsp;
-			<label id="price">Price: </label>
-			<input
-				ref={node => {
-					priceInput = node;
-				}}
-			/>
-			<br />
-			<label id="notes" style={{ verticalAlign: 'top' }}>
-				Notes:{' '}
-			</label>
-			<textarea
-				ref={node => {
-					notesInput = node;
-				}}
-			/>
-			<br />
-			<button
-				onClick={() => {
-					dispatch(
-						addOrder(
-							nameInput.value,
-							priceInput.value,
-							notesInput.value
-						)
-					);
-					nameInput.value = '';
-					priceInput.value = '';
-					notesInput.value = '';
-				}}
-			>
-				Add Order
-			</button>
+		<div className="add-order-view">
+			<div>
+				<h1 className="header">Add Order</h1>
+				<label id="name">Name</label>
+				<br />
+				<input
+					ref={node => {
+						nameInput = node;
+					}}
+				/>
+				<br />
+				<label id="price">Price</label>
+				<br />
+				<input
+					ref={node => {
+						priceInput = node;
+					}}
+				/>
+				<br />
+				<label id="notes" style={{ verticalAlign: 'top' }}>Notes</label>
+				<br />
+				<textarea
+					ref={node => {
+						notesInput = node;
+					}}
+				/>
+				<br />
+				<button className="btn btn-one-in-row"
+					onClick={() => {
+						dispatch(
+							addOrder(
+								nameInput.value,
+								priceInput.value,
+								notesInput.value
+							)
+						);
+						nameInput.value = '';
+						priceInput.value = '';
+						notesInput.value = '';
+					}}
+				>
+					Add Order
+				</button>
+			</div>
+			<div>
+				<img className="menu" src={menu} alt="menu" />
+			</div>
 		</div>
+		
 	);
 };
 export default connect()(AddOrder);

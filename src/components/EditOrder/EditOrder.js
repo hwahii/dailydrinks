@@ -23,7 +23,8 @@ class EditOrder extends React.Component {
 	render() {
 		return (
 			<div>
-				<label>Name: </label>
+				<label id="name">Name</label>
+				<br />
 				<input
 					type="text"
 					id="name"
@@ -32,7 +33,8 @@ class EditOrder extends React.Component {
 					onChange={this.changeState}
 				/>
 				<br />
-				<label>Price: </label>
+				<label id="price">Price</label>
+				<br />
 				<input
 					type="text"
 					id="price"
@@ -41,7 +43,8 @@ class EditOrder extends React.Component {
 					onChange={this.changeState}
 				/>
 				<br />
-				<label style={{ verticalAlign: 'top' }}>Notes: </label>
+				<label style={{ verticalAlign: 'top' }}>Notes</label>
+				<br />
 				<textarea
 					type="text"
 					id="notes"
@@ -50,7 +53,7 @@ class EditOrder extends React.Component {
 					onChange={this.changeState}
 				/>
 				<br />
-				<button
+				<button className="btn btn-one-in-row"
 					onClick={() => {
 						this.dispatch(
 							updateOrder(
