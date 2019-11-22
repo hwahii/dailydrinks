@@ -35,6 +35,14 @@ const Order = ({
 };
 
 const Orders = ({ orders, onEditOrderClick, onDeleteOrderClick }) => {
+	if (orders.length === 0) {
+		return (
+			<div className="order-list-view">
+				<h1 className="header">Order List</h1>
+				<div>The list is empty now, click <strong>Add Order</strong> to add a new order!</div>
+			</div>
+		);
+	}
 	return (
 		<div className="order-list-view">
 			<h1 className="header">Order List</h1>
